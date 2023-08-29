@@ -24,6 +24,7 @@ const Banner = () => {
     const { data: movieDetail } = await axios.get(`movie/${movieId}`, {
       params: { append_to_response: "videos" },
     });
+    console.log(movieDetail); // 콘솔 출력
     setMovie(movieDetail);
   };
 
@@ -40,7 +41,7 @@ const Banner = () => {
               src={`https://www.youtube.com/embed/${movie.videos.results[0].key}?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0].key}`}
               width="640"
               height="360"
-              frameborder="0"
+              frameBorder="0"
               allow="autoplay; fullscreen"
             ></Iframe>
           </HomeContainer>
